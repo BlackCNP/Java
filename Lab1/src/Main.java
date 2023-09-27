@@ -75,10 +75,21 @@ class Library {
 class LibraryManagement {
     public static void main(String[] args) {
         Library library = new Library();
-        
-        library.addBook(new Book("Книга 1", "Автор 1", "1234567890", 2020));
-        library.addBook(new Book("Книга 2", "Автор 2", "2345678901", 2019));
-        library.addBook(new Book("Книга 3", "Автор 3", "3456789012", 2021));
 
+        library.addBook(new Book("Книга 1", "Автор 1", "1234567", 2020));
+        library.addBook(new Book("Книга 2", "Автор 2", "2345678", 2019));
+        library.addBook(new Book("Книга 3", "Автор 3", "3456789", 2021));
+
+        System.out.println("Всі книги в бібліотеці:");
+        library.displayBooks();
+
+
+        String searchTitle = "Книга 2";
+        Book foundBook = library.findBookByTitle(searchTitle);
+        if (foundBook != null) {
+            System.out.println("Знайдена книга за назвою \"" + searchTitle + "\":\n" + foundBook);
+        } else {
+            System.out.println("Книга за назвою \"" + searchTitle + "\" не знайдена.");
+        }
     }
 }
