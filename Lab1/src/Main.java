@@ -91,5 +91,14 @@ class LibraryManagement {
         } else {
             System.out.println("Книга за назвою \"" + searchTitle + "\" не знайдена.");
         }
+        String isbnToDelete = "2345678";
+        if (library.removeBookByISBN(isbnToDelete)) {
+            System.out.println("Книга з ISBN " + isbnToDelete + " була видалена.");
+        } else {
+            System.out.println("Книга з ISBN " + isbnToDelete + " не знайдена в бібліотеці.");
+        }
+        System.out.println("Всі книги в бібліотеці після видалення:");
+        library.displayBooks();
+
     }
 }
