@@ -165,14 +165,14 @@ class LibraryManager {
         }
     }
     public void displayReturnedItems() {
-        System.out.println("Повернуті елементи:");
+        System.out.println((char) 27 + "[36mПовернуті елементи:" + (char)27 + "[0m");
         for (Item item : returnedItems) {
             System.out.println(item);
         }
     }
 
     public void displayAvailableItems() {
-        System.out.println("Доступні елементи:");
+        System.out.println((char) 27 + "[32mДоступні елементи:" + (char)27 + "[0m");
         for (Item item : availableItems) {
             System.out.println(item);
         }
@@ -183,7 +183,7 @@ class LibraryManager {
                 Book book = (Book) item;
                 if (book.getIsbn().equals(isbn)) {
                     availableItems.remove(item);
-                    System.out.println("Книга з ISBN " + isbn + " була успішно видалена.");
+                    System.out.println((char) 27 + "[31mКнига з ISBN " + isbn + " була успішно видалена."+ (char)27 + "[0m");
                     return;
                 }
             }
@@ -192,7 +192,7 @@ class LibraryManager {
     }
 
     public void displayBorrowedItems() {
-        System.out.println("Позичені елементи:");
+        System.out.println((char) 27 + "[31mПозичені елементи:"+ (char)27 + "[0m");
         for (Item item : borrowedItems) {
             System.out.println(item);
         }
