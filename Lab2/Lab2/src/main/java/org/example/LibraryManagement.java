@@ -40,6 +40,9 @@ class Book extends Item {
         this.publicationYear = publicationYear;
         this.borrowedBy = null;
     }
+    public String getIsbn() {
+        return isbn;
+    }
 
     public void setBorrowedBy(Client client) {
         this.borrowedBy = client;
@@ -139,10 +142,7 @@ class LibraryManager {
         availableItems.add(item);
     }
 
-    public void removeItem(Item item) {
-        availableItems.remove(item);
-        borrowedItems.remove(item);
-    }
+
 
     public void registerClient(Client client) {
         clients.put(client.getName(), client);
@@ -177,6 +177,19 @@ class LibraryManager {
             System.out.println(item);
         }
     }
+    public void deleteBookByISBN(String isbn) {
+        for (Item item : availableItems) {
+            if (item instanceof Book) {
+                Book book = (Book) item;
+                if (book.getIsbn().equals(isbn)) {
+                    availableItems.remove(item);
+                    System.out.println("Книга з ISBN " + isbn + " була успішно видалена.");
+                    return;
+                }
+            }
+        }
+        System.out.println("Книга з ISBN " + isbn + " не знайдена.");
+    }
 
     public void displayBorrowedItems() {
         System.out.println("Позичені елементи:");
@@ -190,12 +203,12 @@ public class LibraryManagement {
     public static void main(String[] args) {
         LibraryManager libraryManager = new LibraryManager();
         //додати книги
-        Book книга1 = new Book("Книга1", "Автор1", "978-3-16-148410-0", 1967);
-        Book книга2 = new Book("Книга2", "Автор2", "978-3-16-148410-1", 1697);
+        Book book1 = new Book("Книга1", "Автор1", "978-3-16-148410-0", 1967);
+        Book book2 = new Book("Книга2", "Автор2", "978-3-16-148410-1", 1697);
         DVD dvd1 = new DVD("DVD1", "Режисер1", 1975);
 
-        libraryManager.addItem(книга1);
-        libraryManager.addItem(книга2);
+        libraryManager.addItem(book1);
+        libraryManager.addItem(book2);
         libraryManager.addItem(dvd1);
 
         Client client1 = new Client("Іван Іванов");
@@ -203,21 +216,21 @@ public class LibraryManagement {
         System.out.println("База даних");
         libraryManager.registerClient(client1);
         libraryManager.registerClient(client2);
-
+        libraryManager.deleteBookByISBN("978-3-16-148410-1");
         libraryManager.displayAvailableItems();
 
-        libraryManager.lendItem(книга1, client1);
-        libraryManager.lendItem(книга2, client2);
+        libraryManager.lendItem(book1, client1);
+        libraryManager.lendItem(book2, client2);
         //libraryManager.lendItem(dvd1, client1);
 
 
         // доступні libraryManager.displayAvailableItems();
         libraryManager.displayBorrowedItems();
         //повернути книги або двд
-        libraryManager.returnItem(книга1, client1);
-        /*libraryManager.returnItem(книга1, client1);
-        libraryManager.returnItem(книга1, client1);
-        libraryManager.returnItem(книга1, client1);*/
+        libraryManager.returnItem(book1, client1);
+        /*libraryManager.returnItem(book1, client1);
+        libraryManager.returnItem(book1, client1);
+        libraryManager.returnItem(book1, client1);*/
         libraryManager.displayReturnedItems();
 
 
