@@ -60,7 +60,7 @@ public class Decoder {
 
     public static void main(String[] args) {
         String encodedMessage1 = "t2st3ng";
-        String encodedMessage2 = "ufttjoh";
+        String encodedMessage2 = "sdrshmf";
 
         String decodedMessage1 = decodeVowelEncoding(encodedMessage1);
         String decodedMessage2 = decodeConsonantEncoding(encodedMessage2);
