@@ -60,12 +60,19 @@ public class Decoder {
 
     public static void main(String[] args) {
         String encodedMessage1 = "t2st3ng";
-        String encodedMessage2 = "sdrshmf";
+        String encodedMessage2 = "ufttjoh";
+        /*приклад з завдання "замінюються на наступний"
+        але в прикладі щоб з  "ufttjoh" вийшло "testing"
+        треба замінити на попередні літери*/
+
+        String encodedMessage3 = "sdrshmf";
 
         String decodedMessage1 = decodeVowelEncoding(encodedMessage1);
         String decodedMessage2 = decodeConsonantEncoding(encodedMessage2);
+        String decodedMessage3 = decodeConsonantEncoding(encodedMessage3);
 
         System.out.println("Decoded Message 1: " + decodedMessage1);
         System.out.println("Decoded Message 2: " + decodedMessage2);
+        System.out.println("Decoded Message 3: " + decodedMessage3);
     }
 }
