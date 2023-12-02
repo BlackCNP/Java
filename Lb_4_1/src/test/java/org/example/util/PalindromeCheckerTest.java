@@ -12,5 +12,6 @@ public class PalindromeCheckerTest {
 
         assertFalse(PalindromeChecker.isPalindrome("hello"));
         assertFalse(PalindromeChecker.isPalindrome("world"));
+        assertFalse(PalindromeChecker.isPalindrome(null));
     }
 }
