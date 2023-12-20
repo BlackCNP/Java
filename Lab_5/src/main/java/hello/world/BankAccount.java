@@ -25,7 +25,7 @@ public class BankAccount {
             throw new NegativeAmountException("Неможливо зняти від'ємну суму");
         }
         if (this.balance < amount) {
-            throw new InsufficientFundsException("Недостатньо коштів на рахунку");
+            throw new InsufficientFundsException("Операція невдала.Недостатньо коштів на рахунку");
         }
         this.balance -= amount;
     }
@@ -94,14 +94,16 @@ class TestBank {
         Bank bank = new Bank();
 
         try {
-            int account1 = bank.createAccount("Джон", 1000);
+            int account1 = bank.createAccount("Користувач", 1000);
             int account2 = bank.createAccount("Банк", 500);
-
-            bank.transferMoney(account1, account2, 200);
+            System.out.println("Перша операція");
+            bank.transferMoney(account1, account2, 200); //закидує гроші в банк
             System.out.println(bank.findAccount(account1).getAccountSummary());
             System.out.println(bank.findAccount(account2).getAccountSummary());
-
-            bank.transferMoney(account1, account2, 2000);
+            System.out.println("друга операція");
+            bank.transferMoney(account1, account2, 200);//2000
+            System.out.println(bank.findAccount(account1).getAccountSummary());
+            System.out.println(bank.findAccount(account2).getAccountSummary());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
