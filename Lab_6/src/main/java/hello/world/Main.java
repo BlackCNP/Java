@@ -5,10 +5,11 @@ public class Main {
         Cinema cinema = new Cinema();
 
         // Бронь місць
-        int[] Book_1_1 = {2, 3, 4};
+        int[] Book_1_1 = {2, 3, 4,15};
         cinema.bookSeats(0, 0, Book_1_1);
 
         cinema.bookSeats(0, 0, new int[]{4});
+        cinema.bookSeats(15, 0, new int[]{4});
 
         cinema.bookSeats(0, 0, new int[]{0});
 
