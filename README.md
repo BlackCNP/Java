@@ -12,11 +12,14 @@
 
 [Лаб 5](https://github.com/BlackCNP/Java/tree/main/Lab_5)
 
+[Лаб 6](https://github.com/BlackCNP/Java/tree/main/Lab_6)
+
 - [x] Лабораторна 1
 - [x] Лабораторна 2
 - [ ] Лабораторна 3
 - [x] Лабораторна 4.1
 - [ ] Лабораторна 4.2
 - [ ] Лабораторна 5
+- [ ]  Лабораторна 6
 - [ ] Тест 
 
