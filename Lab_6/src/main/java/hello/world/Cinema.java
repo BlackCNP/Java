@@ -42,7 +42,7 @@ public class Cinema {
                 if (cinemaHall[hallNumber][i][j] == 0) {
                     availableSeats++;
                     if (availableSeats == numSeats) {
-                        System.out.println("Доступно " + numSeats + " місць в ряду " + i + " залу " + hallNumber);
+                        System.out.println("Доступно " + numSeats + " місць в ряду " + (i+1) + " залу " + (hallNumber+1));
                         return;
                     }
                 } else {
@@ -50,7 +50,7 @@ public class Cinema {
                 }
             }
         }
-        System.out.println("Немає " + numSeats + " доступних місць в залі " + hallNumber);
+        System.out.println("Немає " + numSeats   + " доступних місць в залі " + hallNumber);
     }
 
     public void printSeatingArrangement(int hallNumber) {

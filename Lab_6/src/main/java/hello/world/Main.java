@@ -18,7 +18,7 @@ public class Main {
 
         int[] Book_5_10 = {2, 19, 7};
         cinema.bookSeats(4, 9, Book_5_10);
-
+        cinema.checkAvailability(0, 20);
         // схеми
         System.out.println("Після бронювання:");
 
