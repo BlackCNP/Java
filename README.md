@@ -1,27 +1,13 @@
 # Java
-[Лаб_1](https://github.com/BlackCNP/Java/tree/main/Lab1)
 
-[Лаб_2](https://github.com/BlackCNP/Java/tree/main/Lab2/Lab2)
-
-[Лаб_3](https://github.com/BlackCNP/Java/tree/main/Lab_3)
-
-
-[Лаб_4_1](https://github.com/BlackCNP/Java/tree/main/Lb_4_1)
-
-[Лаб_4_2](https://github.com/BlackCNP/Java/tree/main/Lb_4_2)
-
-[Лаб 5](https://github.com/BlackCNP/Java/tree/main/Lab_5)
-
-[Лаб 6](https://github.com/BlackCNP/Java/tree/main/Lab_6)
-
-- [x] Лабораторна 1
-- [x] Лабораторна 2
-- [ ] Лабораторна 3
-- [x] Лабораторна 4.1
-- [ ] Лабораторна 4.2
-- [ ] Лабораторна 5
-- [ ]  Лабораторна 6
-- [ ] Тест 
+- [x] [Лабораторна 1](https://github.com/BlackCNP/Java/tree/main/Lab1)  
+- [x] [Лабораторна 2 ](https://github.com/BlackCNP/Java/tree/main/Lab2/Lab2)
+- [ ] [Лабораторна 3](https://github.com/BlackCNP/Java/tree/main/Lab_3)
+- [x] [Лабораторна 4.1 ](https://github.com/BlackCNP/Java/tree/main/Lb_4_1)
+- [ ] [Лабораторна 4.2 ](https://github.com/BlackCNP/Java/tree/main/Lb_4_2)
+- [ ] [Лабораторна 5 ](https://github.com/BlackCNP/Java/tree/main/Lab_5)
+- [ ]  [Лабораторна 6  ](https://github.com/BlackCNP/Java/tree/main/Lab_6)
+- [ ] Тест  
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake.svg">
