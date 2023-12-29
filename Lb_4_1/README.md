@@ -7,7 +7,7 @@
 - Визначення основної функціональності - перевірка, чи слово є паліндромом.
   2. Створення проекту:
  - Створення нового проекту в IDE (Integrated Development Environment).
-- Створення основного пакету із класом PalindromeChecker.
+- Створення основного пакету із класом `PalindromeChecker`.
 3. Написання коду `PalindromeChecker`:
 
 - Створення класу `PalindromeChecker`.
