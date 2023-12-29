@@ -7,6 +7,7 @@
 - [ ] [Лабораторна 4.2 ](https://github.com/BlackCNP/Java/tree/main/Lb_4_2)
 - [ ] [Лабораторна 5 ](https://github.com/BlackCNP/Java/tree/main/Lab_5)
 - [ ]  [Лабораторна 6  ](https://github.com/BlackCNP/Java/tree/main/Lab_6)
+- [ ]  [Лабораторна 7](https://github.com/BlackCNP/Java/tree/main/Lab_7)
 - [ ] Тест  
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/platane/platane/output/github-contribution-grid-snake-dark.svg">
