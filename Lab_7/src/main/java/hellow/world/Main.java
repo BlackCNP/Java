@@ -45,7 +45,22 @@ class Product implements Comparable<Product> {
         public int compare(Product p1, Product p2) {
             return p1.getName().compareTo(p2.getName());
         }
+        public  Comparator<Product> compareByName = new Comparator<Product>() {
+            @Override
+            public int compare(Product p1, Product p2) {
+                return p1.getName().compareTo(p2.getName());
+            }
+        };
+
+        public  Comparator<Product> compareByStock = new Comparator<Product>() {
+            @Override
+            public int compare(Product p1, Product p2) {
+                return Integer.compare(p1.getStock(), p2.getStock());
+            }
+        };
+
     };
+
 
     public static Comparator<Product> compareByStock = new Comparator<Product>() {
         @Override
@@ -162,11 +177,7 @@ class ECommercePlatform {
         this.orders.put(order.getId(), order);
     }
 
-    public void listAvailableProducts() {
-        for (Product product : this.products.values()) {
-            System.out.println(product);
-        }
-    }
+
 
     public void listUsers() {
         for (User user : this.users.values()) {
@@ -191,6 +202,22 @@ class ECommercePlatform {
             updateProductStock(product, newStock);
         }
     }
+    public void listAvailableProducts() {
+        List<Product> productList = new ArrayList<>(this.products.values());
+
+        System.out.println("Products by name:");
+        Collections.sort(productList, Product.compareByName);
+        for (Product product : productList) {
+            System.out.println(product);
+        }
+
+        System.out.println("Products by stock:");
+        Collections.sort(productList, Product.compareByStock);
+        for (Product product : productList) {
+            System.out.println(product);
+        }
+    }
+
 }
 
 class ECommerceDemo {
@@ -208,10 +235,10 @@ class ECommerceDemo {
         platform.addUser(user4);
 
         // Add products
-        Product product1 = new Product(1, "Product1", 100.0, 10);
-        Product product2 = new Product(2, "Product2", 200.0, 20);
-        Product product3 = new Product(3, "Product3", 300.0, 30);
-        Product product4 = new Product(4, "Product4", 400.0, 40);
+        Product product1 = new Product(1, "A_Product1", 100.0, 10);
+        Product product2 = new Product(2, "B_Product2", 200.0, 20);
+        Product product3 = new Product(3, "H_Product3", 300.0, 15);
+        Product product4 = new Product(4, "C_Product4", 400.0, 40);
         //out print
         platform.addProduct(product1);
         platform.addProduct(product2);
@@ -241,6 +268,8 @@ class ECommerceDemo {
         //UpdateStock
         platform.processOrder(order1);
         platform.processOrder(order2);
+        platform.processOrder(order3);
+        platform.processOrder(order4);
 
 
         // Display the final state of users, products, and orders
