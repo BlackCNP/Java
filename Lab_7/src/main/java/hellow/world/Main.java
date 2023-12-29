@@ -229,11 +229,11 @@ class ECommerceDemo {
 
         user4.addToCart(product3, 2);
 
-        // Simulate order creation and processing
+        // Simulate order creation
         Order order1 = new Order(1, user1.getId(), user1.getCart());
         Order order2 = new Order(2, user2.getId(), user2.getCart());
-        Order order3 = new Order(3, user2.getId(), user2.getCart());
-        Order order4 = new Order(4, user2.getId(), user2.getCart());
+        Order order3 = new Order(3, user3.getId(), user3.getCart());
+        Order order4 = new Order(4, user4.getId(), user4.getCart());
         platform.createOrder(order1);
         platform.createOrder(order2);
         platform.createOrder(order3);
