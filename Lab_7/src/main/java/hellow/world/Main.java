@@ -15,6 +15,7 @@ class Product implements Comparable<Product> {
         this.stock = stock;
     }
 
+
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getName() { return name; }
@@ -83,7 +84,14 @@ class User {
     public void updateCart(Product product, Integer quantity) {
         this.cart.put(product, quantity);
     }
-
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", cart=" + cart +
+                '}';
+    }
 }
 
 class Order {
@@ -97,6 +105,7 @@ class Order {
         this.userId = userId;
         this.orderDetails = orderDetails;
         this.totalPrice = calculateTotalPrice();
+
     }
 
     public Integer getId() { return id; }
@@ -114,8 +123,16 @@ class Order {
         }
         return total;
     }
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", orderDetails=" + orderDetails +
+                ", totalPrice=" + totalPrice +
+                '}';
+    }
 
-  
 }
 
 class ECommercePlatform {
@@ -166,33 +183,65 @@ class ECommercePlatform {
     public void updateProductStock(Product product, int stock) {
         product.setStock(stock);
     }
+    public void processOrder(Order order) {
+        for (Map.Entry<Product, Integer> entry : order.getOrderDetails().entrySet()) {
+            Product product = entry.getKey();
+            Integer quantity = entry.getValue();
+            int newStock = product.getStock() - quantity;
+            updateProductStock(product, newStock);
+        }
+    }
 }
 
 class ECommerceDemo {
     public static void main(String[] args) {
         ECommercePlatform platform = new ECommercePlatform();
 
-        // Add some users
-        User user1 = new User(1, "User1");
+        // Add users
+        User user1 = new User(1, "Петро");
         User user2 = new User(2, "User2");
+        User user3 = new User(3, "Сергій");
+        User user4 = new User(4, "Василь");
         platform.addUser(user1);
         platform.addUser(user2);
+        platform.addUser(user3);
+        platform.addUser(user4);
 
-        // Add some products
+        // Add products
         Product product1 = new Product(1, "Product1", 100.0, 10);
         Product product2 = new Product(2, "Product2", 200.0, 20);
+        Product product3 = new Product(3, "Product3", 300.0, 30);
+        Product product4 = new Product(4, "Product4", 400.0, 40);
+        //out print
         platform.addProduct(product1);
         platform.addProduct(product2);
+        platform.addProduct(product3);
+        platform.addProduct(product4);
 
-        // Simulate user interaction with the cart
+        // Simulate user's   cart
         user1.addToCart(product1, 1);
+        //user1.addToCart(product1, 1);
+
+
         user2.addToCart(product2, 2);
+
+        user3.addToCart(product4, 2);
+
+        user4.addToCart(product3, 2);
 
         // Simulate order creation and processing
         Order order1 = new Order(1, user1.getId(), user1.getCart());
         Order order2 = new Order(2, user2.getId(), user2.getCart());
+        Order order3 = new Order(3, user2.getId(), user2.getCart());
+        Order order4 = new Order(4, user2.getId(), user2.getCart());
         platform.createOrder(order1);
         platform.createOrder(order2);
+        platform.createOrder(order3);
+        platform.createOrder(order4);
+        //UpdateStock
+        platform.processOrder(order1);
+        platform.processOrder(order2);
+
 
         // Display the final state of users, products, and orders
         System.out.println("Users: ");
