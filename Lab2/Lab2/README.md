@@ -3,102 +3,102 @@
 
 План розробки програми бібліотечного управління
 Опис класів
-Item (Abstract Class)
+`Item (Abstract Class)`
 
 Атрибути:
 
-1.title: String
+1.`title: String`
 
-2.uniqueID: String (унікальний для кожного елемента)
+2.`uniqueID: String` (унікальний для кожного елемента)
 
-3.isBorrowed: boolean (за замовчуванням false)
+3.`isBorrowed: boolean` (за замовчуванням false)
 
 Методи:
 
 1.Конструктори, гетери, сетери
 
-2.abstract void borrowItem(): Позначає елемент як позичений.
+2.`abstract void borrowItem()`: Позначає елемент як позичений.
 
 
-3.abstract void returnItem(): Позначає елемент як не позичений.
+3.`abstract void returnItem()`: Позначає елемент як не позичений.
 
-4.Book (implements Item)
+4.`Book (implements Item)`
 
 
 Атрибути:
 
-1.author: String
+1.`author: String`
 
 1.Методи:
 
-2.borrowItem(): Реалізує абстрактний метод з Item.
+2.`borrowItem()`: Реалізує абстрактний метод з Item.
 
-3.returnItem(): Реалізує абстрактний метод з Item.
+3.`returnItem()`: Реалізує абстрактний метод з Item.
 4.DVD (implements Item)
 
 Атрибути:
 
-1.duration: int (хвилини)
+1.`duration: int` (хвилини)
 Методи:
 
-1.borrowItem(): Реалізує абстрактний метод з Item.
-2.returnItem(): Реалізує абстрактний метод з Item.
-3.Client
+1.`borrowItem()`: Реалізує абстрактний метод з Item.
+2.`returnItem()`: Реалізує абстрактний метод з Item.
+3.`Client`
 
 Атрибути:
 
-1.name: String
-2.borrowedItems: ArrayList<Item>
+1`.name: String`
+2.`borrowedItems: ArrayList<Item>`
 Методи:
 
 1.Конструктори, гетери, сетери
 
-2.borrowItem(Item): Додає елемент до списку позичених клієнтом.
+2.`borrowItem(Item)`: Додає елемент до списку позичених клієнтом.
 
-3.returnItem(Item): Видаляє елемент зі списку позичених клієнтом.
+3.`returnItem(Item)`: Видаляє елемент зі списку позичених клієнтом.
 
-4.IManageable (Інтерфейс)
+4.`IManageable` (Інтерфейс)
 
 Методи:
 
-1.add(Item): Додає елемент.
+1.`add(Item)`: Додає елемент.
 
-2.remove(Item): Видаляє елемент.
+2.`remove(Item)`: Видаляє елемент.
 
-3.listAvailable(): Виводить усі доступні елементи.
+3.`listAvailable()`: Виводить усі доступні елементи.
 
-4.listBorrowed(): Виводить усі позичені елементи.
+4.`listBorrowed()`: Виводить усі позичені елементи.
 
-5.Library (implements IManageable)
+5.`Library (implements IManageable)`
 
 Атрибути:
 
-1.availableItems: ArrayList<Item> (для зберігання всіх доступних елементів)
+1.`availableItems: ArrayList<Item>` (для зберігання всіх доступних елементів)
 
-2.borrowedItems: ArrayList<Item> (для зберігання всіх позичених елементів)
+2.`borrowedItems: ArrayList<Item>` (для зберігання всіх позичених елементів)
 
-3.clients: HashMap<String, Client> (для зберігання всіх зареєстрованих клієнтів)
+3.`clients: HashMap<String, Client>` (для зберігання всіх зареєстрованих клієнтів)
 
-4.returnedItems: ArrayList<Item> (для зберігання всіх повернутих елементів)
+4.`returnedItems: ArrayList<Item>` (для зберігання всіх повернутих елементів)
 
 Методи:
 
 
-1.addItem(Item): Додає елемент.
+1.`addItem(Item)`: Додає елемент.
 
-2.registerClient(Client): Реєструє нового клієнта.
+2.`registerClient(Client)`: Реєструє нового клієнта.
 
-3.lendItem(Item, Client): Позичає елемент клієнту.
+3.`lendItem(Item, Client)`: Позичає елемент клієнту.
 
-4.returnItem(Item, Client): Повертає позичений елемент.
+4.`returnItem(Item, Client)`: Повертає позичений елемент.
 
-5.displayReturnedItems(): Виводить всі повернуті елементи.
+5.`displayReturnedItems()`: Виводить всі повернуті елементи.
 
-6.displayAvailableItems(): Виводить усі доступні елементи.
+6.`displayAvailableItems()`: Виводить усі доступні елементи.
 
-7.deleteBookByISBN(String): Видаляє книгу за ISBN.
+7.`deleteBookByISBN(String)`: Видаляє книгу за ISBN.
 
-8.displayBorrowedItems(): Виводить усі позичені елементи.
+8.`displayBorrowedItems()`: Виводить усі позичені елементи.
 
 Послідовність виконаних дій:
 
