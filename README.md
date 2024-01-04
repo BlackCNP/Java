@@ -1,5 +1,5 @@
 # Java
-
+Перевірені роботи
 - [x] [Лабораторна 1](https://github.com/BlackCNP/Java/tree/main/Lab1)  
 - [x] [Лабораторна 2 ](https://github.com/BlackCNP/Java/tree/main/Lab2/Lab2)
 - [ ] [Лабораторна 3](https://github.com/BlackCNP/Java/tree/main/Lab_3)
